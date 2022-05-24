@@ -49,13 +49,42 @@ class MapSampleState extends State<MapSample> {
 
   _markers.add(
     Marker(
-    markerId: MarkerId('_kGooglePlex'),
-    infoWindow: InfoWindow(title: 'Google Plex v3'),
+    markerId: MarkerId('_movilsv_arce'),
+    infoWindow: InfoWindow(title: 'MovilSV - Arce'),
     icon: BitmapDescriptor.defaultMarker, 
-    position: LatLng(37.42796133580664, -122.085749655962)
+    position: LatLng(13.699935452578657, -89.19811278262686)
     )
   );
   
+  _markers.add(
+    Marker(
+    markerId: MarkerId('_movilsv_salvador_mundo'),
+    infoWindow: InfoWindow(title: 'MovilSV - Salvador del mundo'),
+    icon: BitmapDescriptor.defaultMarker, 
+    position: LatLng(13.702310615534824, -89.22452535261124)
+    )
+  );
+
+  _markers.add(
+    Marker(
+    markerId: MarkerId('_movilsv_soyapango_centro'),
+    infoWindow: InfoWindow(title: 'MovilSV - Soyapango centro'),
+    icon: BitmapDescriptor.defaultMarker, 
+    position: LatLng(13.703980702473519, -89.15008647794278)
+    )
+  );
+
+  _markers.add(
+    Marker(
+    markerId: MarkerId('_movilsv_san_jacinto'),
+    infoWindow: InfoWindow(title: 'MovilSV - San Jacinto'),
+    icon: BitmapDescriptor.defaultMarker, 
+    position: LatLng(13.969118065127182, -89.47274244995941)
+    )
+  );
+
+  
+
     return new Scaffold(
       body: GoogleMap(
         mapType: MapType.normal,
