@@ -23,17 +23,19 @@ class MapSample extends StatefulWidget {
 class MapSampleState extends State<MapSample> {
   Completer<GoogleMapController> _controller = Completer();
 
+
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
 
-  static final Marker  _kGooglePlexMarker = Marker(
-    markerId:MarkerId('_kGooglePlex'),
-    infoWindow: InfoWindow(title: 'Google Plex v2'),
-    icon: BitmapDescriptor.defaultMarker, 
-    position: LatLng(37.42796133580664, -122.085749655962),
-  );
+
+  // static final Marker  _kGooglePlexMarker = Marker(
+  //   markerId:MarkerId('_kGooglePlex'),
+  //   infoWindow: InfoWindow(title: 'Google Plex v2'),
+  //   icon: BitmapDescriptor.defaultMarker, 
+  //   position: LatLng(37.42796133580664, -122.085749655962),
+  // );
 
   static final CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
@@ -43,10 +45,21 @@ class MapSampleState extends State<MapSample> {
 
   @override
   Widget build(BuildContext context) {
+    List<Marker> _markers = <Marker>[];
+
+  _markers.add(
+    Marker(
+    markerId: MarkerId('_kGooglePlex'),
+    infoWindow: InfoWindow(title: 'Google Plex v3'),
+    icon: BitmapDescriptor.defaultMarker, 
+    position: LatLng(37.42796133580664, -122.085749655962)
+    )
+  );
+  
     return new Scaffold(
       body: GoogleMap(
         mapType: MapType.normal,
-        markers: {_kGooglePlexMarker},
+        markers:Set<Marker>.of(_markers),
         initialCameraPosition: _kGooglePlex,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
